@@ -1,0 +1,15 @@
+use tcc;
+create table tb_pratos(
+ind_pratos  int auto_increment primary key,
+nome_prato  varchar(100) not null,
+prato_ingrediente_1 varchar(100) not null,
+prato_ingrediente_2 varchar(100),
+prato_ingrediente_3 varchar(100),
+FOREIGN KEY (prato_ingrediente_1) references tb_ingredientes(id_ingredientes),
+FOREIGN KEY (prato_ingrediente_2) references tb_ingredientes(id_ingredientes),
+FOREIGN KEY (prato_ingrediente_3) references tb_ingredientes(id_ingredientes),
+preco_prato int not null
+);
+
+select*from tb_pratos;
+

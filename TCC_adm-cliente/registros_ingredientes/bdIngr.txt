@@ -1,0 +1,46 @@
+create database tcc;
+use tcc;
+ 
+CREATE TABLE `login` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(70) ,
+  `email` varchar(100),
+  `senha` varchar(100),
+  `nasc` date,
+  `tel` int(11),
+  `ende` varchar(70),
+  PRIMARY KEY (`id`)
+);
+ 
+CREATE TABLE `login_funcionario` (
+  `id_funcionario` int NOT NULL,
+  `nome_func` varchar(50),
+  `email_func` varchar(50) ,
+  `senha_func` varchar(50),
+  `cpf_func` int(50),
+  `cargo` varchar(50),
+  `hierarquia` varchar(50),
+  PRIMARY KEY (`id_funcionario`)
+);
+ 
+CREATE TABLE `tb_ingredientes` (
+  `id_ingr` int primary key AUTO_INCREMENT,
+  `nm_ingr` varchar(100),
+  `gra_ingr` int(100),
+  `desc_ingr` text
+);
+ 
+CREATE TABLE  `tb_pratos` (
+  `id_prato` int primary key AUTO_INCREMENT,
+  `nm_prato` varchar(100) ,
+  `prato_ingr_1` varchar(100) ,
+  `prato_ingr_2` varchar(100) ,
+  `prato_ingr_3` varchar(100) ,
+  `preco_prato` int(11)
+  -- FOREIGN KEY (`prato_ingr_1`) references `tb_ingredientes`(`id_ingr`),
+  -- FOREIGN KEY (`prato_ingr_2`) references `tb_ingredientes`(`id_ingr`),
+  -- FOREIGN KEY (`prato_ingr_3`) references `tb_ingredientes`(`id_ingr`)
+);
+show tables;
+
+SELECT * FROM tb_ingredientes;
